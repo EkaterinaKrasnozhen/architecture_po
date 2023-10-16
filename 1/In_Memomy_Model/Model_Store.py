@@ -7,7 +7,7 @@ from IModel_Changer import IModelChanger
 from IModel_Changed_Observer import IModel_Changed_Observer
 
 @implementer(IModelChanger)
-class Model_Store(IModel_Changed_Observer):
+class Model_Store():
     def __init__(self):
         self.models: list[Poligonal_Model] = []
         self.scenes: list[Scene] = []
@@ -16,7 +16,7 @@ class Model_Store(IModel_Changed_Observer):
         if not len(self.models) or not len(self.scenes) or not len(self.flashes) or not len(self.cameras):
             # можно в одну строку все? или лучше разделить?
             raise f'Должен быть хотя бы 1 объект в свойствах'
-        self._change_observers: list = [IModelChanger]
+        self._change_observers: list[IModel_Changed_Observer] = []
 
     def get_scene(self, id_: int):
         for scena in self.scenes:
