@@ -1,9 +1,9 @@
 from Poligon import Poligon
 from Texture import Texture
+from Stuff import Point3D
 
 class Poligonal_Model:
     def __init__(self, textures: Texture): # композиция - poligons, агрегация textures
-        self.poligons = Poligon()
-        if not self.poligons:
-            raise f'Должен быть хотя бы 1 объект {Poligon} в {self.poligons}'
+        self.poligons = list[Poligon]
+        self.poligons.append(Poligon(list[Point3D()]))
         self.textures = textures
