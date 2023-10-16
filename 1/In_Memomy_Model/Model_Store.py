@@ -10,6 +10,7 @@ from Stuff.Angle import Angle3D
 from Stuff.Point3D import Point3D
 from Stuff.Color import Color
 
+
 @implementer(IModelChanger)
 class Model_Store():
     def __init__(self):
