@@ -6,6 +6,7 @@ from Model_Elements.Camera import Camera
 from IModel_Changer import IModelChanger
 from IModel_Changed_Observer import IModel_Changed_Observer
 
+
 @implementer(IModelChanger)
 class Model_Store():
     def __init__(self):
@@ -22,6 +23,6 @@ class Model_Store():
         for scena in self.scenes:
             if id_ == scena.id_:
                 return scena
-            
+
     def notify_change(self, sender: IModelChanger):
         pass
